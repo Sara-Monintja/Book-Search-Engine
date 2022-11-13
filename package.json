@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Sara-Monintja/Book-Search-Engine/issues"
   },
-  "homepage": "https://github.com/Sara-Monintja/Book-Search-Engine#readme"
+  "homepage": "https://github.com/Sara-Monintja/Book-Search-Engine#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.11.1"
+  }
 }
