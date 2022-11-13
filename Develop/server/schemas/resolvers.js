@@ -21,7 +21,23 @@ const resolvers = {
     },
 
     Mutation: {
-        
+        addUser: async (parent, { username, email, pasword }, context) => {
+            const user = await User.create({
+                username, email, password
+            });
+
+            if(!user) {
+                throw new Error('Something is wrong');
+            }
+            const token = signToken(user);
+            return { token, user };
+        },
+        login: async (parent, { email, password }) => {
+            const user = await User.gindOne({ email: email });
+            if (!user) {
+                throw new Error('Unable to find user);
+            }
+        }
     }
 }
 
